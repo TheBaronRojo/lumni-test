@@ -1,0 +1,2 @@
+import PersonsRepositoryImplementation from "./PersonsRepositoryImplementation";
+export default PersonsRepositoryImplementation;

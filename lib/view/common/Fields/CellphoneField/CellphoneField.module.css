@@ -1,0 +1,7 @@
+.inputsContainer {
+  width: 100%; 
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 4em 1fr;
+  grid-gap: var(--field-composite-gap);
+}

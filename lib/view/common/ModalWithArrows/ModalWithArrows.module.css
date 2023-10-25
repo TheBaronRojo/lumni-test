@@ -1,0 +1,100 @@
+.modalWithArrows {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  max-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.modalWithArrows.openModalWithArrows {
+  display: flex;
+}
+
+.modalWithArrowsContent {
+  position: relative;
+}
+
+.modalContent>* {
+  position: relative;
+  z-index: 0;
+}
+
+.closeButton {
+  position: absolute;
+  z-index: 2;
+  width: var(--close-button-size);
+  height: var(--close-button-size);
+  right: var(--close-button-spacing);
+  top: var(--close-button-spacing);
+  cursor: pointer;
+  color: var(--close-button-color);
+  background: var(--close-button-background-color);
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.closeButton:hover {
+  background: var(--close-button-hover-background-color);
+}
+
+.containerModalWithArrow {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.arrowLeft:hover,
+.arrowRight:hover {
+  background: rgba(0, 0, 0, 0.6);
+  color: #F4F4F5;
+  cursor: pointer;
+}
+
+.hidenArrow{
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (min-width: 960px) {
+
+  .arrowLeft,
+  .arrowRight {
+    width: 2.6rem;
+    height: 2rem;
+    background-color: #FBFBFB;
+    margin: 0 2rem;
+  }
+}
+
+@media (max-width: 959px) {
+
+  .arrowLeft,
+  .arrowRight {
+    background-color: #FBFBFB;
+    width: 2rem;
+    height: 1.5rem;
+  }
+
+  .containerArrowLeft {
+    position: absolute;
+    top: unset;
+    bottom: 100%;
+    left: 7rem;
+  }
+
+  .containerArrowRight {
+    position: absolute;
+    top: unset;
+    bottom: 100%;
+    right: 7rem;
+  }
+}

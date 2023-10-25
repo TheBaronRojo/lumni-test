@@ -1,0 +1,68 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 { font-size: 1.2rem; }
+h2 { font-size: 1.1rem; }
+
+@media (min-width: 2400px) {
+
+  html,
+  body {
+    font-size: 20px;
+    background: #f8f8f8;
+    ;
+  }
+}
+
+body {
+  scrollbar-width: 14px;
+}
+
+body::-webkit-scrollbar {
+  width: 14px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #c4c4c4;
+  position: relative;
+}
+
+body.noScroll {
+  overflow-y: hidden;
+}
+
+@media (min-width: 1000px) {
+  body.noScroll {
+    padding-right: 14px !important;
+  }
+}
+
+@-moz-document url-prefix() {
+  body.noScroll {
+    padding-right: 0 !important;
+  }
+}

@@ -1,0 +1,33 @@
+.mainBarProgress {
+  display: flex;
+  width: 30rem;
+  height: 2.5rem;
+  margin: 0 auto 3rem;   
+  font-size: 12px;
+  font-weight: bolder;
+}
+
+.barProgressProfileEmployability {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  width: 50%;
+  border: 1px solid var(--color-dark-light);
+  border-radius: 2rem;
+  background-color: var(--paper-background-color);
+}
+
+.barProgressCv {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  width: 50%;
+  border: 1px solid var(--color-dark-light);
+  border-radius: 2rem;
+  margin-left: -6.5%;
+  background-color: var(--paper-background-color);
+}
+
+.barProgressCv span:nth-child(1) {
+  padding-left: 1rem;
+}

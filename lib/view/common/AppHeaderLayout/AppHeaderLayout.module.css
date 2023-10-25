@@ -1,0 +1,17 @@
+.root {
+  min-height: calc(100vh - var(--app-header-height));
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  box-sizing: border-box;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+
+.content {
+  padding-top: var(--app-header-height);
+  /*min-height: 100vh;*/
+}

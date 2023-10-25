@@ -1,0 +1,8 @@
+{
+	"name": "Node.js & TypeScript",
+	"image": "mcr.microsoft.com/vscode/devcontainers/typescript-node:0-16",
+	"containerEnv": {
+		"VIRTUAL_HOST": "www.lumnistudents.local"
+	},
+	"appPort": "3002:3000"
+}

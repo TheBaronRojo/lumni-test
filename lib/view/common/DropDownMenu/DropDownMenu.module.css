@@ -1,0 +1,11 @@
+  .logoButton {
+    position: relative;
+    border: none;
+    background-color: var(--color-primary-contrast);
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  .logoButton:hover {
+    cursor: pointer;
+  }

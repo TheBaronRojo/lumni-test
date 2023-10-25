@@ -1,0 +1,17 @@
+.logoDropDown {
+  width: 3rem;
+  height: 3rem;
+}
+
+@media (min-width: 1000px) {
+  .containerLogoDropDownMobile {
+    display: none;
+  }
+}
+
+.btn {
+  border: none;
+  background-color: var(--color-light);
+  padding: 0;
+  height: 3rem
+}

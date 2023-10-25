@@ -1,0 +1,19 @@
+.formSection {
+  --form-section-padding: 0 0.5rem 0 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--form-section-padding);
+  background: var(--color-light);
+  min-height: 100%;
+}
+
+@media (min-aspect-ratio: 1 / 1) {
+  .formSection {
+    --form-section-padding: 4rem 1rem 8rem 1rem;
+  }
+}
+
+.formSection > * {
+  max-width: 30rem;
+}

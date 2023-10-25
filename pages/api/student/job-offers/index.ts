@@ -1,0 +1,2 @@
+import StudentJobOffersIndexController from "@presentation/nextApiHandlers/StudentJobOffersIndexController";
+export default StudentJobOffersIndexController;

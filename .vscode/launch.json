@@ -1,0 +1,42 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug worker",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/lib/startWorkers.ts",
+      "preLaunchTask": "npm: build-lib",
+      "outFiles": ["${workspaceFolder}/.dist/**/*.js"]
+    },
+    {
+      "name": "Debug server-side",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run dev"
+    },
+    {
+      "name": "Debug client-side",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000"
+    },
+    {
+      "name": "Debug full stack",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run dev",
+      "serverReadyAction": {
+        "pattern": "started server on .+, url: (https?://.+)",
+        "uriFormat": "%s",
+        "action": "debugWithChrome"
+      }
+    },
+    {
+      "name": "Debug test",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run test"
+    },
+  ]
+}

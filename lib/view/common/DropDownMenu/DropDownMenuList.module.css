@@ -1,0 +1,24 @@
+.root {
+  top: 3rem;
+  right: 1.5rem;
+  border: 1px solid rgb(197, 197, 197);
+  background: #fff;
+  padding: 0 2rem;
+  color: var(--color-full-dark);
+  text-align: left;
+  border-radius: 0.5rem;
+}
+
+.listItem {
+  font-size: 1rem;
+  color: var(--color-dark-light);
+}
+
+.listItem:last-child {
+  border-bottom: none;
+}
+
+.listItem:hover {
+  cursor: pointer;
+  color: var(--color-full-dark);
+}

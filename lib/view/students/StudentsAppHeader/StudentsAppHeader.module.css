@@ -1,0 +1,56 @@
+.root {
+  --app-header-justify-content: space-between;
+  --app-header-logo-section-padding: 0.3rem 0;
+  --greeting-display: none;
+  --logo-drop-down-display: block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: var(--color-light);
+  height: var(--app-header-height);
+  box-shadow: var(--app-header-box-shadow);
+  padding: 0 2em;
+  justify-content: var(--app-header-justify-content);
+}
+
+@media (min-width: 1000px) {
+  .root {
+    --app-header-justify-content: space-between;
+    --app-header-logo-section-padding: 0.4rem 0;
+    --greeting-display: flex;
+    --logo-drop-down-display: none;
+  }
+}
+
+.greeting {
+  display: var(--greeting-display);
+}
+
+.logoSection {
+  height: 100%;
+  padding: var(--app-header-logo-section-padding);
+}
+
+.logoDropDown {
+  display: var(--logo-drop-down-display);
+  width: 3rem;
+  height: 3rem;
+}
+
+/* .logoSection > * {
+  cursor: pointer;
+  height: 100%;
+  aspect-ratio: 244/105;
+} */
+
+.logoSection>span {
+  cursor: pointer;
+  height: 100% !important;
+  width: auto !important;
+}
+
+.logoSection>span>* {
+  height: 100% !important;
+  width: auto !important;
+  aspect-ratio: 244/105;
+}

@@ -1,0 +1,22 @@
+.containerGreeting {
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (min-width: 1000px) {
+  .containerGreeting {
+    display: flex;
+  }
+}
+
+.logo {
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  text-align: center;
+  color: var(--color-primary-contrast);
+  font-size: 2rem;
+  min-height: 1.2em;
+  max-height: 1.2em;
+  min-width: 1.2em;
+  max-width: 1.2em;
+}

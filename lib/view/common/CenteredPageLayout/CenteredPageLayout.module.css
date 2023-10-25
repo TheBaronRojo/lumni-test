@@ -1,0 +1,16 @@
+.root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.content {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 66rem;
+}
+
+.root.paper {
+  background: var(--paper-background-color);
+}

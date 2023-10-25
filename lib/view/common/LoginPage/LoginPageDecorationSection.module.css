@@ -1,0 +1,72 @@
+.root {
+  --h1-font-size: 2rem;
+  --font-margin: 0.2em 0;
+  --p-font-size: 1.2rem;
+  --root-padding: 2rem 1rem;
+  padding: var(--root-padding);
+  /* background: var(--color-primary); */
+  background: rgba(var(--color-primary-rgb), 0.9);
+  color: var(--color-primary-contrast);
+  min-height: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  position: relative;
+}
+
+@media (min-width: 1000px) {
+  .root {
+    --h1-font-size: 3.4rem;
+    --h1-margin: 1em 0;
+    --p-font-size: 1.4rem;
+    --root-padding: 4rem;
+  }
+}
+
+.root h1 {
+  font-size: var(--h1-font-size);
+  margin: var(--font-margin);
+  position: relative;
+  z-index: 1;
+}
+
+.root p {
+  font-size: var(--p-font-size);
+  margin: var(--font-margin);
+  position: relative;
+  z-index: 1;
+}
+
+.logoPartA {
+  position: absolute;
+  height: 0;
+  display: flex;
+  align-items: center;
+  width: min(15%, 10rem);
+  right: 2%;
+  top: 40%;
+  z-index: 0;
+}
+
+.logoPartB {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: min(15%, 10rem);
+  left: 20%;
+  top: 2%;
+  z-index: 0;
+}
+
+.logoPartC {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: min(25%, 15rem);
+  left: 2%;
+  bottom: 2%;
+  z-index: 0;
+}

@@ -1,0 +1,21 @@
+.optionsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--field-check-group-columns-width));
+  grid-gap: var(--field-check-group-grid-gap);
+  font-size: var(--field-check-group-item-font-size);
+  justify-content: center;
+  align-items: flex-start;
+  background-color: var(--field-check-group-items-container-bgcolor);
+  border-radius: var(--input-border-radius);
+  padding: 0.25rem;
+}
+
+.optionsContainer > * {
+  display: flex;
+  border-radius: 0.4rem;
+  align-items: flex-start;
+}
+
+.optionsContainer > *:hover {
+  background: rgba(var(--color-primary-rgb), 0.08);
+}

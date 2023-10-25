@@ -1,0 +1,26 @@
+
+.root {
+  --split-page-layout-columns: 1fr;
+  --split-page-layout-rows: auto auto;
+  display: grid;
+  grid-template-columns: var(--split-page-layout-columns);
+  grid-template-rows: var(--split-page-layout-rows);
+  min-height: calc(100vh - var(--app-header-height));
+}
+
+
+@media (min-aspect-ratio: 1 / 1) {
+  .root {
+    --split-page-layout-columns: 1fr 1fr;
+    --split-page-layout-rows: auto;
+  }
+}
+
+@media (min-height: 1300px) {
+  .root {
+    /* min-height: calc(100vh - var(--app-header-height)); */
+    min-height: calc(calc(100vh - var(--app-header-height)) - var(--app-footer-height) );
+    /* min-height: 1000px; */
+  }
+}
+

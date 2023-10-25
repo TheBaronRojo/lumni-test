@@ -1,0 +1,2 @@
+import JobOffersRepositoryImplementation from "./JobOffersRepositoryImplementation";
+export default JobOffersRepositoryImplementation;

@@ -1,0 +1,78 @@
+.root {
+  position: relative;
+}
+
+.tipContainer {
+  position: absolute;
+  width: 0;
+  max-width: 0;
+  height: 0;
+  max-height: 0;
+  opacity: 0;
+  display: flex;
+  visibility: hidden;
+  transition: opacity 0.5s ease;
+}
+
+.root:hover .tipContainer {
+  visibility: visible;
+  opacity: 1;
+}
+
+.root:hover .tipContainer:hover {
+  opacity: 0;
+}
+
+.tip {
+  font-size: 0.9rem;
+  line-height: 0.9rem;
+  width: fit-content;
+  background: rgba(var(--color-primary-rgb), 0.15);
+  padding: 0.3rem 0.4rem;
+  border-radius: 0.4rem;
+  display: inline-block;
+  font-weight: normal;
+  position: relative;
+}
+
+.topLeft {
+  left: -0.2rem;
+  top: -0.2rem;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.topRight {
+  right: -0.2rem;
+  top: -0.2rem;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.top {
+  right: 0rem;
+  top: -0.2rem;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.bottomLeft {
+  left: -0.2rem;
+  bottom: -0.2rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.bottomRight {
+  right: -0.2rem;
+  bottom: -0.2rem;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.bottom {
+  right: 0;
+  bottom: -0.2rem;
+  justify-content: center;
+  align-items: flex-start;
+}

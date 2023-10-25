@@ -1,0 +1,48 @@
+.containerMessage {
+  position: relative;
+  width: 100%;
+  height: 3rem;
+  background-color: var(--color-secondary);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.isOpen {
+  display: flex;
+}
+
+.containerMessage p {
+  color: #fff;
+  font-weight: bold;
+}
+
+.containerMessage button {
+  border: none;
+  background-color: var(--color-secondary);
+  cursor: pointer;
+  padding: 0;
+}
+
+.closeIcon {
+  color: #fff;
+  width: 1.3rem;
+  height: 1.3rem;
+  position: absolute;
+  right: 1rem;
+  top: 0.5rem;
+}
+
+@media (max-width: 450px){
+  .containerMessage p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 600px){
+  .containerMessage {
+    position: absolute;
+    top: 0;
+    z-index: 999;
+  }
+}

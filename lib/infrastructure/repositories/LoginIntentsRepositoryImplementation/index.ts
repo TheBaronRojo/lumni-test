@@ -1,0 +1,2 @@
+import LoginIntentsRepositoryImplementation from "./LoginIntentsRepositoryImplementation";
+export default LoginIntentsRepositoryImplementation;

@@ -1,0 +1,6 @@
+.root {
+  box-sizing: border-box;
+  width: 100%;
+  background: var(--paper-background-color);
+  padding: var(--paper-padding);
+}

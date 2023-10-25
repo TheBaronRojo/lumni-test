@@ -1,0 +1,26 @@
+.root {
+  padding: var(--field-selected-value-padding);
+  background: var(--field-selected-background-color);
+  color: var(--field-selected-value-color);
+  box-shadow: var(--field-selected-box-shadow);
+  border-radius: var(--field-selected-value-border-radius);
+  transition: background-color 0.2s ease;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.root:hover {
+  background: var(--field-selected-hover-background-color);
+  cursor: pointer;
+}
+
+.icon {
+  min-width: 1rem;
+  width: 1rem;
+  transition: color 0.2s ease;
+}
+
+.icon:hover {
+  color: var(--field-selected-delete-btn-hover-color);
+}

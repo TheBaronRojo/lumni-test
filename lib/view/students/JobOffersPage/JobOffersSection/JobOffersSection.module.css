@@ -1,0 +1,91 @@
+.root {
+  --grid-container-max-height: none;
+  --grid-container-min-height: 50vh;
+  --header-padding: 2rem 0.6rem 0 0.6rem;
+  --grid-section-padding: 0 0.6rem;
+  display: flex;
+  flex-direction: column;
+  /* gap: 1rem; */
+}
+
+@media (min-width:1000px) {
+  .root {
+    --grid-section-padding: 0 3rem;
+    --header-padding: 1rem 3rem 0.5rem 3rem;
+    --grid-container-max-height: calc(100vh - (var(--app-header-height) + 6rem));
+    --grid-container-min-height: calc(100vh - (var(--app-header-height) + 6rem));
+  }
+}
+
+.header {
+  background: var(--paper-background-color);
+  min-height: 3rem;
+  padding: var(--header-padding);
+  display: flex;
+  justify-content: center;
+}
+
+.header > * {
+  max-width: 70rem;
+  width: 100%;
+}
+
+.gridSection {
+  padding: var(--grid-section-padding);
+  background: var(--paper-background-color);
+}
+
+
+.gridContainer {
+  direction:rtl; 
+  overflow-y: auto;
+  max-height: var(--grid-container-max-height);
+  min-height: var(--grid-container-min-height);
+  padding: 1rem 0;
+}
+
+.gridContainer::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+.gridContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.gridContainer::-webkit-scrollbar-thumb {
+  background-color: #c4c4c4;
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+.grid {
+  direction: ltr;
+}
+
+.detailCard {
+  min-width: min(42rem, 90vw);
+  max-width: 42rem;
+  min-height: min(30rem, 90vh);
+  max-height: 90vh;
+}
+
+.notFoundMessage {
+  text-align: center;
+  padding: 4rem 1rem 2rem 1rem;
+  font-style: italic;
+  direction: ltr;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.notFoundMessage > * {
+  max-width: 40rem;
+
+}
+
+.biSearchIcons {
+  min-width: 20rem;
+  height: 2.5rem;
+  color: var(--color-primary);
+}

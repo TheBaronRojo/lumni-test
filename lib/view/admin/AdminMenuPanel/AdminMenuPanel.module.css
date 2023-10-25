@@ -1,0 +1,98 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.root button {
+  width: 100%;
+  padding: 0.6rem 0.5rem;
+  margin: 0.2rem 0;
+}
+
+
+.logoNameContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+  background-color: var(--color-light-dark);
+  position: relative;
+  padding: 1rem 1rem 1.5rem 1rem;
+  min-height: 8rem;
+}
+
+.logOutButton {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--color-primary);
+}
+
+.logo {
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  text-align: center;
+  color: var(--color-primary-contrast);
+  font-size: 3rem;
+  min-height: 1.2em;
+  max-height: 1.2em;
+  min-width: 1.2em;
+  max-width: 1.2em;
+}
+
+.menuItemIcon {
+  color: var(--color-primary);
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.iconArrow {
+  color: var(--color-primary);
+}
+
+.itemsContainer {
+  --btn-font-size: 0.9rem;
+  background-color: var(--paper-background-color);
+}
+
+.itemsContainer ul {
+  list-style-type: none;
+  padding: 1rem 0 1rem 0;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.itemsContainer li {
+  margin: 0;
+  color: var(--color-full-dark);
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.itemsContainer li > :nth-child(2) {
+  flex-grow: 1;
+}
+
+.personInfoMenuItems {
+  min-height: 8rem;
+}
+
+.sectionMessages {
+  min-height: 10rem;
+  padding: 3rem 1.7rem 1rem 1.5rem;
+  --btn-font-size: 0.9rem;
+  background-color: var(--paper-background-color);
+}
+
+.contentSectionMessages {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}

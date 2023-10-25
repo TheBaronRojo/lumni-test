@@ -1,0 +1,2 @@
+import AdminJobOffersIndexController from "@presentation/nextApiHandlers/AdminJobOffersIndexController";
+export default AdminJobOffersIndexController;

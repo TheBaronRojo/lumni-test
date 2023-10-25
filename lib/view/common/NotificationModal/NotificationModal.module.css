@@ -1,0 +1,60 @@
+.modal {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.isOpen {
+  display: flex;
+}
+
+.modalContainer {
+  display: flex;
+  padding: 1rem;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-color: #fff;
+  width: min(28rem, 90%);
+  min-height: 15rem;
+  border-radius: var(--card-border-radius);
+  text-align: center;
+  /* box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.9); */
+}
+
+.modalClose {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background-color: #fff;
+  border: none;
+  color: #817f7f;
+}
+
+.closeIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.modalClose:hover {
+  color: #666565;
+  cursor: pointer;
+}
+
+.modal img {
+  width: 4rem;
+  height: 4rem;
+  margin-top: 0.6rem;
+}
+
+.modal h3 {
+  margin-bottom: 0;
+}

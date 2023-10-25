@@ -1,0 +1,201 @@
+.root {
+  --btn-padding: 0.2em 1em;
+  --btn-min-height: 1.9em;
+  --info-container-grid-columns: 1fr;
+  --requirements-container-grid-columns: 1fr;
+  --requirements-container-padding: 0.5rem;
+  --content-padding: 0.8rem 1rem 1rem 1rem;
+  --info-item-display: flex;
+  --font-size: 0.9rem;
+  --h3-font-size: 0.95rem;
+  --h1-font-size: 1.4rem;
+  --title-flex-direction: column;
+  --title-min-height: 5rem;
+  font-size: var(--font-size);
+  min-height: 15rem;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1000px) {
+  .root {
+    --info-container-grid-columns: 1fr 1fr 1fr;
+    --requirements-container-grid-columns: 1fr 1fr;
+    --content-padding: 0.8rem 2rem 1rem 2rem;
+    --requirements-container-padding: 0.5rem 1rem;
+    --info-item-display: block;
+    --font-size: 1rem;
+    --h3-font-size: 1.05rem;
+    --h1-font-size: 2rem;
+    --title-flex-direction: row;
+    --title-min-height: 1.8rem;
+  }
+}
+
+.root h3 {
+  margin: 0;
+  font-weight: bold;
+  font-size: var(--h3-font-size);
+}
+
+.root h1 {
+  margin: 0;
+  font-size: var(--h1-font-size);
+  font-weight: bold;
+}
+
+.head {
+  position: relative;
+  font-weight: bold;
+  padding: 0.5rem 2rem 0.4rem 2rem;
+  text-align: center;
+  background: var(--color-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--color-primary-contrast);
+  border-top-left-radius: var(--card-border-radius);
+  border-top-right-radius: var(--card-border-radius);
+  min-height: 2rem;
+}
+
+.content {
+  padding: var(--content-padding);
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-light);
+  border-bottom-left-radius: var(--card-border-radius);
+  border-bottom-right-radius: var(--card-border-radius);
+  word-break: break-word;
+  gap: 2rem;
+  max-height: calc(100% - 2rem);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: var(--title-flex-direction);
+  min-height: var(--title-min-height);
+}
+
+.title h1 {
+  padding: 0 0 0.2rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+  padding-right: 0.5rem;
+}
+
+.description {
+  margin: 0.2rem 0 0.5rem 0;
+}
+
+.infoContainer {
+  display: grid;
+  grid-template-columns: var(--info-container-grid-columns);
+  gap: 0.5rem 1rem;
+}
+
+.infoItem {
+  display: var(--info-item-display);
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.infoContainer p {
+  margin: 0;
+}
+
+
+.requirementsContainer {
+  display: grid;
+  grid-template-columns: var(--requirements-container-grid-columns);
+  align-items: flex-start;
+  gap: 1rem 2rem;
+  padding: var(--requirements-container-padding);
+  background: rgba(var(--color-dark-rgb), 0.04);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--card-box-shadow);
+  height: fit-content;
+  flex-grow: 1;
+  /* min-height: 8rem; */
+}
+
+.requirement h3 {
+  position: relative;
+  padding-left: 0.6rem;
+}
+
+.requirement h3::before {
+  position: absolute;
+  top: 0.45em;
+  left: 0;
+  content: '';
+  display: block;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--color-primary);
+}
+
+.requirement ul {
+  padding: 0 0 0 0.7rem;
+  margin: 0;
+  list-style-type: none;
+}
+
+.listLocationsContainer {
+  align-items: flex-start;
+  gap: 1rem 2rem;
+  padding: var(--requirements-container-padding);
+  background: rgba(var(--color-dark-rgb), 0.04);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--card-box-shadow);
+  height: fit-content;
+}
+
+.locationContainer {
+  height: 7rem;
+  overflow: auto;
+  background-color: var(--color-secondary-contrast);
+  border: 1px solid #969696;
+}
+
+.textOpenOrCloseList {
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.textButton {
+  padding: 0;
+  border: none;
+  background: rgba(var(--color-dark-rgb), 0.01);
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+.locations h3 {
+  position: relative;
+  padding-left: 0.6rem;
+  padding-bottom: 0.5rem;
+}
+
+.locations h3::before {
+  position: absolute;
+  top: 0.45em;
+  left: 0;
+  content: '';
+  display: block;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--color-primary);
+}

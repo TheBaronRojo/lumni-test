@@ -1,0 +1,102 @@
+.text, .contained, .outlined {
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font-weight: var(--btn-font-weight);
+  font-size: var(--btn-font-size);
+  padding: var(--btn-padding);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contained, .outlined {
+  border-radius: var(--btn-border-radius);
+  box-shadow: var(--btn-box-shadow);
+  min-height: var(--btn-min-height);
+  min-width: var(--btn-min-width);
+}
+
+.text {
+  border: none;
+  outline: none;
+  color: var(--btn-color);
+  background: none;
+  border-radius: var(--btn-border-radius);
+}
+
+.text:hover {
+  background: rgba(var(--btn-color-rgb), 0.1);
+}
+
+.text:disabled {
+  color: var(--btn-disabled-color-contrast);
+  cursor: not-allowed;
+}
+
+.contained {
+  border: none;
+  outline: none;
+  background: var(--btn-color);
+  color: var(--btn-color-contrast);
+}
+
+.contained:disabled {
+  color: var(--btn-disabled-color-contrast);
+  background: var(--btn-disabled-color);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.outlined {
+  background: none;
+  border-width: var(--btn-border-width);
+  border-style: solid;
+  position: relative;
+  overflow: hidden;
+  color: var(--btn-color);
+  border-color: currentColor; 
+}
+
+.outlined:disabled {
+  cursor: not-allowed;
+  background: var(--btn-disabled-color);
+  box-shadow: none;
+  opacity: 0.5;
+}
+
+/* Colors */
+
+.primary {
+  --btn-color: var(--color-primary);
+  --btn-color-rgb: var(--color-primary-rgb);
+  --btn-color-contrast: var(--color-primary-contrast);
+}
+
+.secondary {
+  --btn-color: var(--color-secondary);
+  --btn-color-rgb: var(--color-secondary-rgb);
+  --btn-color-contrast: var(--color-secondary-contrast);
+}
+
+.tertiary {
+  --btn-color: var(--color-tertiary);
+  --btn-color-rgb: var(--color-tertiary-rgb);
+  --btn-color-contrast: var(--color-tertiary-contrast);
+}
+
+.warning {
+  --btn-color: var(--color-warning);
+  --btn-color-rgb: var(--color-warning-rgb);
+  --btn-color-contrast: var(--color-warning-contrast);
+}
+
+.dark {
+  --btn-color: var(--color-dark);
+  --btn-color-rgb: var(--color-dark-rgb);
+  --btn-color-contrast: var(--color-dark-contrast);
+}
+
+.light {
+  --btn-color: var(--color-light);
+  --btn-color-rgb: var(--color-light-rgb);
+  --btn-color-contrast: var(--color-light-contrast);
+}

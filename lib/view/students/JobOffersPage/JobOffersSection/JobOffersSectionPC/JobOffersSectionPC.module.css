@@ -1,0 +1,26 @@
+.root {
+  display: grid;
+  grid-template-columns: minmax(26rem, 1fr) 4fr;
+  grid-template-areas: "previews detail";
+  height: 38rem;
+  max-height: 38rem;
+}
+
+.previewsContainer {
+  grid-area: previews;
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: grid;
+  gap: 1rem;
+}
+
+.previewsContainer > * {
+  height: 12rem;
+}
+
+.detailContainer {
+  grid-area: detail;
+  background: red;
+  max-height: 100%;
+}

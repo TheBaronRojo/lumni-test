@@ -1,0 +1,126 @@
+.root {
+  --panel-width: 100%;
+  --app-aside-unordered-list-li-margin-bottom: 0.5em;
+  --app-aside-grid-template-areas:  "aside"
+                                    "main";
+  --app-aside-grid-template-columns: 1fr;
+  --main-container-padding: 0;
+  --info-items-min-height: 12.5rem;
+  --main-container-min-height: 0;
+  display: grid;
+  grid-template-areas: var(--app-aside-grid-template-areas);
+  grid-template-columns: var(--app-aside-grid-template-columns);
+  grid-template-rows: var(--app-aside-grid-template-rows);
+  /* align-items: flex-start;
+    position: relative; */
+}
+
+@media (min-width:1000px) {
+  .root {
+    --info-items-min-height: 12.5rem;
+    --panel-width: 22rem;
+    --main-container-padding: 1rem;
+    --app-aside-grid-template-areas: "aside main";
+    --app-aside-grid-template-columns: var(--panel-width) 1fr;
+    --main-container-min-height: calc(100vh - var(--app-header-height));
+  }
+}
+
+.sideBarContainer {
+  grid-area: aside;
+  width: var(--panel-width);
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-height: 100%;
+}
+
+.mainContainer {
+  grid-area: main;
+  padding: var(--main-container-padding);
+  min-height: var(--main-container-min-height);
+}
+
+.unorderedList {
+  min-height: var(--info-items-min-height);
+  list-style-type: none;
+  padding: 1rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  background: var(--paper-background-color);
+}
+
+.unorderedList li {
+  margin: 0;
+  color: var(--color-dark);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  word-break: break-word;
+}
+
+.logoNameContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+  background-color: var(--color-light-dark);
+  position: relative;
+  padding: 1rem 1rem 1.5rem 1rem;
+  min-height: 8rem;
+}
+
+.menuItemIcon {
+  color: var(--color-primary);
+}
+
+/* .iconTool {
+    position: absolute;
+    right: 2.5rem;
+    top: 0.5rem;
+} */
+
+.logOutButton {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--color-primary);
+}
+
+.logo {
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  text-align: center;
+  color: var(--color-primary-contrast);
+  /* margin: 0.4em 0;
+    margin-left: 1rem; */
+  font-size: 3rem;
+  min-height: 1.2em;
+  max-height: 1.2em;
+  min-width: 1.2em;
+  max-width: 1.2em;
+}
+
+.containerSection2,
+.containerSection3 {
+  --btn-font-size: 0.9rem;
+  position: relative;
+  padding: 0 1.7rem 1rem 1.7rem;
+  background-color: var(--paper-background-color);
+}
+
+.containerSection2 button {
+  margin-right: 0.5rem;
+  min-width: 7rem;
+}
+
+.newTag {
+  font-weight: bold;
+  color: var(--color-error);
+  font-size: 0.8rem;
+}
