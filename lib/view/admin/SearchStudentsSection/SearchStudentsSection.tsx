@@ -1,41 +1,71 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import styles from "./SearchStudentsSection.module.css";
 
 import IPersonDto from "@application/models/IPersonDto";
 import AnimatedPanel from "@view/common/AnimatedPanel";
 import EmploymentInfoDetail from "@view/admin/InfoDetails/EmploymentInfoDetail";
+import Table, { ITableCellIndex, ITableColumn } from "@view/common/Table";
+import ISearchStudentsRow from "./ISearchStudentsRow";
+import useFetchStudents from "../Api/useFetchStudents";
+import studentToRow from "./studentToRow";
+import StudentsSearcher from "../SearchStudentsPage/StudentsSearcher";
 
 
 const SearchStudentsSection = () => {
 
   const [selectedPerson, setSelectedPerson] = useState<undefined | IPersonDto>();
   const [openLeftPanel, setOpenLeftPanel] = useState(false);
+  const [selectedCell, setSelectedCell] = useState<undefined | ITableCellIndex<ISearchStudentsRow>>();
+  const [searchString, setSearchString] = useState<string>("");
 
-  const onSubmit = () => {};
+  const { students, loadingStudents } = useFetchStudents({ keyWords: searchString });
+  const [columns, setColumns] = useState<ITableColumn<ISearchStudentsRow>[]>([
+    { Header: "#", accessor: "rowIndex", width: 50, cellWidth: 50 },
+    { Header: "Fecha de registro", accessor: "registerDate", width: 200, cellWidth: 200 },
+    { Header: "Nombres y apellidos", accessor: "fullName", width: 300, cellWidth: 300 },
+  ]);
+
+  const values = useMemo(() => students
+    ?.sort((a, b) => {
+      const aCreatedAt = new Date(a.createdAt);
+      const bCreatedAt = new Date(b.createdAt);
+      if (aCreatedAt > bCreatedAt) return -1;
+      if (aCreatedAt < bCreatedAt) return 1;
+      return 0;
+    })
+    .map((x, index) => studentToRow(x, index)) ?? [],
+    [students]
+  );
+
+  const onCellClick = (cellIndex: ITableCellIndex<ISearchStudentsRow>) => {
+    setSelectedCell(selectedCell);
+    setSelectedPerson(students?.find(x => x.id === cellIndex.rowId));
+    setOpenLeftPanel(true);
+  };
 
   return (
     <div className={styles.root}>
       <header className={styles.header}>
         <h1>Buscar estudiantes por perfil de empleabilidad: </h1>
         <div className={styles.headersButtons}>
-
         </div>
       </header>
-      <form className={styles.searchBox} onSubmit={onSubmit}>
-         {/*
-            
-          Implemente aquí formulario de búsqueda
-           
-        */}
-      </form>
+      <StudentsSearcher
+        onSubmit={s => setSearchString(s)}
+        resultsCount={students?.length}
+        loading={loadingStudents}
+      />
       <main>
-        {/*
-            
-          Implemente aquí la tabla de resultados   
-           
-        */}
         <div role="dummy-table" className={styles.table}>
-
+          <Table
+            loading={loadingStudents}
+            className={styles.table}
+            columns={columns}
+            values={values}
+            onCellClick={onCellClick}
+            selectedCell={selectedCell}
+            onColumnsChange={setColumns}
+          />
         </div>
       </main>
       <AnimatedPanel open={openLeftPanel} onClose={() => { setOpenLeftPanel(false); }}>

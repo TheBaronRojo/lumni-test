@@ -14,3 +14,37 @@
   margin: 0;
   text-align: center;
 }
+
+.mainTitle {
+  font-size: 2.3rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex: 1
+}
+
+.form h2 {
+  font-size: large;
+  font-weight: lighter;
+}
+
+.formBox {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0px 2.5rem;
+}
+
+.formBox label {
+  font-size: large;
+  font-weight: 500;
+}
+
+.formBox input {
+  color: black !important;
+  background-color: #E8F0FE;
+}

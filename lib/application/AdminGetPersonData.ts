@@ -32,8 +32,31 @@ export default class AdminGetPersonData {
   
   async getPersonsByEmploymentInfoKeyWords(searchString: string, authInfo?: IAuthorizationDataDto): Promise<IPersonDto[] | null> {
 
-    // TODO:  Implement
+    if (authInfo === undefined || !authInfo.roles.includes(UserRole.Staff)) {
+      throw new UnauthorizedException("Allowed for Staff Only");
+    }
 
-    return []
+    const entity = await this.getPersonsByEmploymentInfoKeyWords(searchString);
+    if (!entity)
+      return null;
+    return entity
+    //return this.personDtoMapper.entityToDto(entity);
+  }
+
+  /**
+   * Search all persons with info or non info
+   * @param authInfo 
+   * @returns 
+   */
+  async getAllPersons(keyWords: string, authInfo?: IAuthorizationDataDto): Promise<IPersonDto[] | null> {
+
+    if (authInfo === undefined || !authInfo.roles.includes(UserRole.Staff)) {
+      throw new UnauthorizedException("Allowed for Staff Only");
+    }
+    let entities = (keyWords?.trim().length == 0 || !keyWords)
+      ? await this.personsRepository.fetchAllWithEmploymentInfo()
+      : await this.personsRepository.fetchByEmploymentInfoKeyWords(keyWords);
+    return entities && entities.map(x => this.personDtoMapper.entityToDto(x));
+
   }
 }

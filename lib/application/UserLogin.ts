@@ -1,4 +1,4 @@
-import { UnauthorizedException } from "@storyofams/next-api-decorators";
+import { UnauthorizedException, ConflictException } from "@storyofams/next-api-decorators";
 import { singleton } from "tsyringe";
 
 import UserEntity from "@domain/models/UserEntity";
@@ -23,9 +23,19 @@ class UserLogin {
   ) { }
 
   public async loginWithEmailAndPassword(request: IUserLoginWithEmailAndPasswordDto): Promise<IAuthorizationDataDto> {
+
     const user = await this.usersRepository.fetchByEmail(request.email);
     if (user === null) {
       throw new UnauthorizedException("Invalid Credentials");
+    }
+
+    const date = new Date();
+    const dateMinusFive = new Date(date.getTime() - (5 * 60000));
+    const loginIntents = (await this.loginIntentsRepository.fetchByUserIdAndCreatedAt(user.id, dateMinusFive));
+    const failedLoginIntents = loginIntents.filter(x => !x.wasSuccess);
+
+    if(failedLoginIntents.length >= 4) {
+      throw new ConflictException("Too many login attempts");
     }
 
     const loginIntent = LoginIntentEntity.factory(
@@ -46,7 +56,7 @@ class UserLogin {
   }
 
   // Private Methods
-  
+
   private calculateTokenExpiration(user: UserEntity): Date {
     const expiration = new Date();
     expiration.setHours(expiration.getHours() + UserLogin.JWT_TOKEN_EXPIRATION_HOURS);

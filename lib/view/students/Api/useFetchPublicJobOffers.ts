@@ -18,7 +18,7 @@ export default function useFetchPublicJobOffers(props: IuseFetchPublicJobOffers)
     }
   }, [props.keyWords]);
 
-  const { data, error, isValidating, mutate } = useSWR<IJobOfferSummaryDto[], IApiErrorDto, string>(
+  const { data, error, isValidating, mutate  } = useSWR<IJobOfferSummaryDto[], IApiErrorDto, string>(
     searchKey,
     (key: string) => api.get(key).then(x => x.isSuccess ? x.body : Promise.reject(x.body)),
   );

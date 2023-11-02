@@ -39,7 +39,11 @@ const LoginPage = () => {
   }, [sessionState]);
 
   const onLoginFail = () => {
-    // TODO: Implement
+    openNotificationModal({
+      variant: "warning",
+      title: "Credenciales inválidas",
+      description: "Verifica el correo y contraseña ingresados",
+    });
   };
 
   const onError = () => {
@@ -50,6 +54,14 @@ const LoginPage = () => {
     });
   };
 
+  const onTooManyAttempts = () => {
+    openNotificationModal({
+      variant: "error",
+      title: "Error inesperado",
+      description: "Ha superado el número de intentos permitidos, por favor intente de nuevo más tarde",
+    })
+  }
+
   return (
     <AppHeaderLayout>
       <SplitPageLayout>
@@ -57,7 +69,8 @@ const LoginPage = () => {
         <div className={styles.formSection}>
           <LoginManager 
             onLoginFail={onLoginFail} 
-            onError={onError} 
+            onError={onError}
+            onTooManyAttempts={onTooManyAttempts}
           />
         </div>
       </SplitPageLayout>

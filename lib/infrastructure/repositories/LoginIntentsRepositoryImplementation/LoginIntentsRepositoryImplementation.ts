@@ -19,7 +19,6 @@ export default class LoginIntentsRepositoryImplementation extends LoginIntentsRe
     await delay(100);
     const oldDbm = this.items().find(x => x.id === entity.id);
     if (oldDbm) throw new Error(`${LoginIntentEntity.name} with id = '${entity.id} already exist'`);
-
     const newDbm = this.loginIntentDbmMapper.entityToDbm(entity);
     this.items().push(newDbm);
   }
